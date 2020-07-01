@@ -10,6 +10,7 @@ const Cards = ({ cards }) => {
                 { card.data.crosspost_parent == null && card.data.media == null ? 
                 <div class="card mb-4">
                     <img src={ card.data.url } alt="" width="400px" height="300px"/>
+                    <li>hi</li>
                 </div>
                 : ""
                 }
