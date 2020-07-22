@@ -4,6 +4,9 @@ orbs:
 
 jobs:
   pre-setup-test:
+    docker:
+      - image: circleci/node:10-browsers
+    resource_class: small
     steps:
       - ci/pre-setup
 
