@@ -1,9 +1,13 @@
-orbs:
-  node: circleci/node@2.0.2
-
 version: 2.1
+orbs:
+  ci: bigcommerce/internal@volatile
+
+jobs:
+  pre-setup-test:
+    steps:
+      - ci/pre-setup
 
 workflows:
-  node-test:
+  test-pre-setup:
     jobs:
-      - node/test
+      - pre-setup-test
