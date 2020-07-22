@@ -2,13 +2,18 @@ version: 2.1
 orbs:
   ci: bigcommerce/internal@volatile
 
+commands:
+  pre-setup:
+    steps:
+      - add_ssh_keys
+
 jobs:
   pre-setup-test:
     docker:
       - image: circleci/node:10-browsers
     resource_class: small
     steps:
-      - ci/pre-setup
+      - pre-setup
 
 workflows:
   test-pre-setup:
